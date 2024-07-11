@@ -65,6 +65,20 @@
           }
         ]
       },
+      "in": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -74,8 +88,132 @@
             "named": true
           }
         ]
+      },
+      "out": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "out",
+            "named": false
+          }
+        ]
       }
     },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "accessor",
+          "named": true
+        },
+        {
+          "type": "booleans",
+          "named": true
+        },
+        {
+          "type": "builtin",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "operand",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "elif_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "accessor",
+          "named": true
+        },
+        {
+          "type": "booleans",
+          "named": true
+        },
+        {
+          "type": "builtin",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "operand",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "else_statement",
+    "named": true,
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
@@ -172,6 +310,14 @@
         },
         {
           "type": "definition",
+          "named": true
+        },
+        {
+          "type": "elif_statement",
+          "named": true
+        },
+        {
+          "type": "else_statement",
           "named": true
         },
         {

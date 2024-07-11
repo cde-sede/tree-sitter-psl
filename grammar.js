@@ -82,10 +82,11 @@ module.exports = grammar({
     _proc: $ => seq(
       "proc",
       field("name", $.identifier),
-      repeat(seq($.word, $.cast)),
+      field("in", repeat(seq($.word, $.cast))),
       "in",
-      repeat1($._definition),
-      optional(seq("out", repeat1($.cast))),
+      field('out', optional(seq("out", repeat1($.cast)))),
+      "do",
+      repeat($._definition),
       field('end', $.end),
     ),
 
@@ -104,19 +105,19 @@ module.exports = grammar({
       repeat1($._definition),
       'do',
       repeat1($._definition),
-      optional(repeat($._elif_statement)),
-      optional($._else_statement),
+      optional(repeat($.elif_statement)),
+      optional($.else_statement),
       field('end', $.end),
     ),
 
-    _elif_statement: $ => seq(
+    elif_statement: $ => seq(
       'elif',
       repeat($._definition),
       'do',
       repeat($._definition),
     ),
 
-    _else_statement: $ => seq(
+    else_statement: $ => seq(
       'else',
       repeat($._definition),
     ),

@@ -37,7 +37,11 @@
   ],
   "tree-sitter": [
     {
+      "highlights": "queries/highlights.scm",
       "scope": "source.pyslang",
+      "file-types": [
+        "pyslang"
+      ],
       "injection-regex": "^pyslang$"
     }
   ]
