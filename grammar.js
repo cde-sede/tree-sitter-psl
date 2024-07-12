@@ -63,23 +63,23 @@ module.exports = grammar({
       $.flow_control
     ),
 
-    definitions: $ => choice($._memory, $._macro, $._proc),
+    definitions: $ => choice($.memory, $.macro, $.proc),
 
-    _macro: $ => seq(
-      "macro",
+    macro: $ => seq(
+      field('type', "macro"),
       field("name", $.identifier),
       repeat1($._definition),
       field('end', $.end),
     ),
 
-    _memory: $ => seq(
+    memory: $ => seq(
       "memory",
       field("name", $.identifier),
       repeat1($._definition),
       field('end', $.end),
     ),
 
-    _proc: $ => seq(
+    proc: $ => seq(
       "proc",
       field("name", $.identifier),
       field("in", repeat(seq($.word, $.cast))),

@@ -9,7 +9,9 @@
 
 
 (flow_control end: (end) @keyword.repeat) @keyword.repeat
-(definitions name: (identifier) @function end: (end) @keyword.function) @keyword.function
+(memory name: (identifier) @function end: (end) @keyword.function) @keyword.function
+(macro name: (identifier) @function end: (end) @keyword.function) @keyword.function
+(proc name: (identifier) @function end: (end) @keyword.function) @keyword.function
 
 (char) @character
 (string) @string
@@ -18,4 +20,5 @@
 (accessor) @property
 
 "exit" @keyword.return
+"do" @keyword
 (end) @keyword

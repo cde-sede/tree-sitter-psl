@@ -203,24 +203,28 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_memory"
+          "name": "memory"
         },
         {
           "type": "SYMBOL",
-          "name": "_macro"
+          "name": "macro"
         },
         {
           "type": "SYMBOL",
-          "name": "_proc"
+          "name": "proc"
         }
       ]
     },
-    "_macro": {
+    "macro": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "macro"
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "STRING",
+            "value": "macro"
+          }
         },
         {
           "type": "FIELD",
@@ -247,7 +251,7 @@
         }
       ]
     },
-    "_memory": {
+    "memory": {
       "type": "SEQ",
       "members": [
         {
@@ -279,7 +283,7 @@
         }
       ]
     },
-    "_proc": {
+    "proc": {
       "type": "SEQ",
       "members": [
         {
